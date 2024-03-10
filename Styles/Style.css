@@ -1,0 +1,143 @@
+/* Por padrão o CCS já vem com configurações de layout, e para modificar podemos resetar esses elementos usando o * que seleciona toda a página. */
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cor-principal: #000000;
+    --cor-secundaria: #F6F6F6;
+    --cor-terciaria: #22D4FD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* height: 100vh; Configura a altura para ocupar 100% da tela, sem scroll */
+    box-sizing: border-box; /*   Permite criar bordas para que o elemento fique dentro do body. é responsável por como a largura e a altura totais de um elemento são calculadas */
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+    
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 15%;
+
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 30px;
+}
+
+.cabecalho__menu__link {
+    color: var(--cor-terciaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    width: 299px;
+    text-decoration: none;
+}
+
+
+/* A classe permite que apenas aquele determinado elemento seja manipulado, para isso crio class no html e chamo esse elemento de classe começando com ponto e o nome que eu atribui no html*/
+
+.apresentacao {
+    padding: 5% 15%;
+    display: flex; /* Organiza e separa os elementos em linhas */
+    align-items: center; /* Alinha os elementos ao centro */
+    justify-content: space-between; /* Justifica o texto espaçando ele */
+    gap: 82px;
+}
+
+.apresentacao__conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espaço entre os elementos */
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 2.25rem; /* Se alterar o tamanho da fonte no navegador, a página só acompanha se usar o REM, onde 16px = 1 rem e assim por diante. */
+    font-family: "Krona One", sans-serif;
+}
+
+.titulo-destaque {
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__conteudo__paragrafo {
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.apresentacao__links {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.apresentacao__links__subtitulo {
+    font-family: "Krona One", sans-serif;
+    font-weight: 400px;
+    font-size: 1.5rem;
+    color: var(--cor-secundaria);
+}
+
+.apresentacao__links__botao {
+    /* background-color: #22D4FD; */
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 50%;
+    text-align: center;
+    border: 2px solid var(--cor-terciaria);
+    border-radius: 8px; /*Deixa a borda arredondada */
+    font-size: 1.5rem;
+    font-weight: 600px;
+    padding: 21.5px 0; /*Ele vai dar espaçamento em tudo, mas para ser somente vertical precisa deixar zero em horizontal */
+    text-decoration: none; /* Remove a linha de hiperlink do texto */
+    color: var(--cor-secundaria);
+    font-family: "Montserrat", sans-serif;
+}
+
+.apresentacao__links__botao:hover {
+    background-color: #272727;
+}
+
+.apresentacao__imagem {
+    width: 50%;
+}
+
+.rodape {
+    color: var(--cor-principal);
+    background-color: var(--cor-terciaria);
+    text-align: center;
+    padding: 24px;
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400px;
+}
+
+/* O media é como um IF que verifica o tamanho da tela e aplica um estilo caso seja verdadeiro */
+@media (max-width: 1200px) {
+    .cabecalho {
+       padding: 6%; 
+    }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+  
+    .apresentacao {
+        flex-direction: column-reverse; /* inverte a ordem */
+        padding: 5%;
+    }
+    
+    .apresentacao__conteudo {
+        width: auto;
+    }
+}
